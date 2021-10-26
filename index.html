@@ -6,11 +6,11 @@
     <meta charset="utf-8" />
     <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
     <meta property="og:image" content="https://i.imgur.com/whmTRmk.png" />
-    <script src="https://cdn.jsdelivr.net/npm/text-image/dist/text-image.js"></script>
+    <script src="js/html2canvas.min.js"></script>
     <script src="js/script.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="preload" href="font/McDonald's_Fries_Font.ttf" as="font" crossorigin="anonymous" />
-    <link rel="preload" href="font/McDonald's_Fries_Font.woff2" as="font" crossorigin="anonymous" />
+    <!-- <link rel="preload" href="font/McDonald's_Fries_Font.ttf" as="font" crossorigin="anonymous" />
+    <link rel="preload" href="font/McDonald's_Fries_Font.woff2" as="font" crossorigin="anonymous" /> -->
 
 </head>
 
@@ -26,15 +26,17 @@
             <div class="form-group">
                 <label>文字大小</label>
                 <select name="font-size">
-                    <option selected value="64">大</option>
-                    <option value="38">中</option>
-                    <option value="12">小</option>
+                    <option selected value="100">大</option>
+                    <option value="50">中</option>
+                    <option value="25">小</option>
                 </select>
             </div>
             <div class="form-group">
                 <textarea name='image-text' maxlength="30" placeholder="Type here..."></textarea>
-                <div class="image-display text-center">
-                </div>
+                <br/>
+                <!-- <div class="image-display"><img/></div> -->
+                <div><img class="image-display"/></div>
+                <!-- <div class="image-display text-center"></div> -->
             </div>
             <div class="form-group">
                 <a class="image-download btn btn-success" target="_blank" download="McDonald's.png">下載圖片</a>

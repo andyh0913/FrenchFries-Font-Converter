@@ -7,3 +7,13 @@
 textarea::placeholder {
     font-family: 'Courier New', Courier, monospace;
 }
+
+/* .image-display {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+} */
+
+.image-display {
+    display: inline-block;
+}
