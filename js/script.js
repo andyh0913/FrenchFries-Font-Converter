@@ -16,6 +16,7 @@ const char2image = {    "!": "images/!.png",
                         "`": "images/`.png",
                         "~": "images/~.png",
                         "´": "images/´.png",
+                        "’": "images/'.png",
                         "+": "images/+.png",
                         "=": "images/=.png",
                         "×": "images/×.png",
@@ -58,7 +59,7 @@ const char2image = {    "!": "images/!.png",
                         "X": "images/X.png",
                         "Y": "images/Y.png",
                         "Z": "images/Z.png",
-                        " ": "space.png"
+                        " ": "images/space.png"
                     }
 
 document.onreadystatechange = function () {
@@ -87,23 +88,27 @@ function init() {
 
 function updateImage() {
     var message = textarea.value;
-    var size = parseInt(form.querySelector('select[name="font-size"]').value)
+    var scale = parseInt(form.querySelector('select[name="font-size"]').value)
     message = message.toUpperCase()
     const map = Array.prototype.map
     imageArray = map.call(message, x => char2image[x]?char2image[x]:char2image["?"])
     var parent = document.createElement('div')
-    parent.style = 'padding: 0; display: block; position: fixed; top: 100%; overflow: hidden;'
+    parent.style = 'padding: 0; display: block; position: fixed; top: 30%; overflow: hidden;'
     // imageDisplay.innerHTML = ''
+    const fontSize = parseInt(window.getComputedStyle(document.body).getPropertyValue('font-size'));
+    // console.log(fontSize)
     document.body.appendChild(parent)
-    imageArray.forEach(url => {
+    imageArray.forEach((url, i )=> {
         var newImg = document.createElement("img")
         newImg.src = url;
-        newImg.height = size;
-        newImg.crossOrigin = 'anonymous'
+        newImg.height = scale * fontSize;
+        newImg.crossOrigin = 'anonymous';
+        if (i !== 0) newImg.style.marginLeft = (-0.25 * scale * fontSize).toString() + 'px';
         parent.appendChild(newImg);
     });
+    
     html2canvas(parent, {allowTaint: true, useCORS: true, backgroundColor: "rgba(0,0,0,0)"}).then(function(canvas) {
-        console.log(imageDisplay)
+        // console.log(imageDisplay)
         if (canvas.toDataURL() === "data:,") {
             imageDisplay.src = ""
             imageDownload.href = ""
@@ -114,6 +119,7 @@ function updateImage() {
         }
         
     })
+    document.body.removeChild(parent);
 
     // var style = {
     //         font: 'FrenchFries',
