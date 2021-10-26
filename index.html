@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>薯條體產生器</title>
+    <meta charset="utf-8" />
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+    <script src="https://cdn.jsdelivr.net/npm/text-image/dist/text-image.js"></script>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- <link rel="preload" href="font/French_Fries_test2-Regular.otf" as="font" crossorigin="anonymous" /> -->
+</head>
+
+<body>
+    <div id="load">
+        <img src="images/loading.gif"/>
+    </div>
+    <div id="contents" class="container">
+        <header>
+            <h1>薯條體產生器</h1>
+        </header>
+        <form>
+            <div class="form-group">
+                <label>文字大小</label>
+                <select name="font-size">
+                    <option selected value="64">大</option>
+                    <option value="38">中</option>
+                    <option value="12">小</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <textarea name='image-text' maxlength="30" placeholder="Type here..."></textarea>
+                <div class="image-display text-center">
+                </div>
+            </div>
+            <div class="form-group">
+                <a class="image-download btn btn-success" target="_blank" download="McDonald.png">下載圖片</a>
+                <p>手機請直接點擊圖片儲存</p>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
