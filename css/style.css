@@ -1,6 +1,7 @@
 @font-face {
     font-family: 'FrenchFries';
-    src: url("../font/McDonald's_Fries_Font.ttf") format("opentype");
+    src: url("../font/McDonald's_Fries_Font.ttf") format("truetype"),
+         url("../font/McDonald’s_Fries_Font.woff") format("woff");
 }
 
 textarea::placeholder {
